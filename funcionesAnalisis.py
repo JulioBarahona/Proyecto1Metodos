@@ -5,7 +5,7 @@ def todosLosDomingos():
     print len(datosOriginales)
     print datosOriginales
 
-    for i in datosOriginales:
+    for i in (datosOriginales):
         if (i[2] != 'Domingo'):
             print 'el dato ' +  str(i) +  ' se elimina '
             datosOriginales.pop(datosOriginales.index(i))
