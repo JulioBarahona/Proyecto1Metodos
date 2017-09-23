@@ -13,10 +13,13 @@ def todosLosDomingos():
     draw_img = ImageDraw.Draw(img)
     x = 0
 
+    print datosNuevos
+
+
     for i in datosNuevos:
         x = x + 30
-        y = (max(datosNuevos + 500)) - float(i)
-        draw_img.line((x, 200, x, y), width=10, fill=(255, 0, 0, 255))
+        y = (max(datosNuevos) + 500 ) - float(i)
+        draw_img.line((x, 200, x, y), width=10, fill=(0, 0, 255, 0))
 
     img.show()
 

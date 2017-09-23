@@ -38,4 +38,8 @@ def getDatos():
         reader = csv.reader(f)
         listaGruesa = list(reader)
         listaGruesa.pop(0)
+
+        for i in xrange(0, len(listaGruesa), 1):
+            listaGruesa[i][1] = float(listaGruesa[i][1])
+
     return listaGruesa
