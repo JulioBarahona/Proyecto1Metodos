@@ -16,6 +16,9 @@ def imprimirDatos():
         reader = csv.reader(f)
         listaGruesa = list(reader)
 
+    for i in xrange(1,len(listaGruesa),1):
+        listaGruesa[i][1] = float(listaGruesa[i][1])
+
     print 'Desea imprimir los datos leido? (Y/N)'
 
     flag = raw_input()
