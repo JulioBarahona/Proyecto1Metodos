@@ -2,18 +2,14 @@ from modulosExtra import *
 
 def todosLosDomingos():
     datosOriginales = getDatos()
+    datosNuevos = []
     print len(datosOriginales)
     print datosOriginales
 
-    for i in (datosOriginales):
-        if (i[2] != 'Domingo'):
-            print 'el dato ' +  str(i) +  ' se elimina '
-            datosOriginales.pop(datosOriginales.index(i))
-        else:
-            print 'el dato ' +  str(i) +  ' NO se elimina '
 
+    for i in range(len(datosOriginales)):
+        if datosOriginales[i][2] == "Domingo":
+            datosNuevos.append(datosOriginales[i])
 
-    print datosOriginales
-    print len(datosOriginales)
-
+    print datosNuevos
 todosLosDomingos()
