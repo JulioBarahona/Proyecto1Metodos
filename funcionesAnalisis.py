@@ -18,6 +18,8 @@ def todosLosDomingos():
 
     for i in datosNuevos:
         x = x + 30
+        print max(datosNuevos)
+        print max(datosNuevos) + 500
         y = (max(datosNuevos) + 500 ) - float(i)
         draw_img.line((x, 200, x, y), width=10, fill=(0, 0, 255, 0))
 
