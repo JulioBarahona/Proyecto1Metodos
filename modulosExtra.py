@@ -57,6 +57,7 @@ def getDatos():
 def agregarAnio():
     num = 'ayyyy lmao xdxdxd'
     while num is 'ayyyy lmao xdxdxd':
+
         try:
             num = int(input("Ingrese el año: "))
 
