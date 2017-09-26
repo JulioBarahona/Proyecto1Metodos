@@ -12,12 +12,6 @@ from funcionesAnalisis import *
 from Predicciones import *
 import Predicciones
 
-print('+-------------------------+')
-print('+       Proyecto #1       +')
-print('+       Integrantes:      +')
-imprimirIntegrantes()
-#fA.imprimirDatos()
-
 ReadDatos()
 #print(GetDatos())
 

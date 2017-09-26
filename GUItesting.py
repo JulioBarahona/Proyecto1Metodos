@@ -12,3 +12,17 @@ msgbox("                                   Proyecto #1\n"
        "       Kevin Sanchez?       ??????",'Metodos Numericos','Continuar')
 
 
+
+msg ="Seleccione la opcion que desea ejecutar \n Selecicones <cancel> para finalizar."
+title = "Menu principal"
+choices = ["Analizar dia", "Agregar Año", ]
+while 1:
+    choice = choicebox(msg, title, choices)
+    if choice is None:
+        sys.exit(0)
+    elif choice == 'Analizar dia':
+        print('dia')
+    elif choice == "Agregar Año":
+        print('año')
+
+        msgbox("You chose: {}".format(choice), "Add year")
