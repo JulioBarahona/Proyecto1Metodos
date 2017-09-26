@@ -1,9 +1,9 @@
 import csv
-from texttable import Texttables
+from texttable import Texttable
 
-month = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
-
-year = [2012,2013,2014,2015]
+months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+years = []
+datos = []
 
 # imprime los nomrbes de los integrantes de manera ordenada
 def imprimirIntegrantes():
@@ -37,37 +37,29 @@ def imprimirDatos():
         print(t.draw())
 
 #combierte los datos a una lista, eliminando tambien los titulos
-def getDatos():
-    with open('DBmetodos.csv', 'r') as f:
+def ReadDatos():
+    with open('DBmetodosTest.csv', 'r') as f:
         reader = csv.reader(f)
-        l = []
         listaGruesa = list(reader)
         listaGruesa.pop(0)
         for i in listaGruesa:
-            try:
-                l.append(i + [month[int(i[0][0:2]) - 1]] )
-            except:
-                l.append(i + [month[int(i[0][0:1]) - 1]])
-
-        for i in range(0, len(listaGruesa), 1):
-            listaGruesa[i][1] = float(listaGruesa[i][1])
+            i[1] = float(i[1])
+            date = i[0]
+            month = date[0:date.index('/')]
+            date = date[date.index('/')+1:]
+            day = date[0:date.index('/')]
+            year = date[date.index('/')+1:]
+            datos.append(i + [int(day)] + [int(month)] + [int(year)])
+            if year not in years:
+                years.append(year)
 
     return listaGruesa
 
-def agregarAnio():
-    num = 'ayyyy lmao xdxdxd'
-    while num is 'ayyyy lmao xdxdxd':
+def GetDatos():
 
-        try:
-            num = int(input("Ingrese el anio: "))
+    return datos
 
-        except ValueError:
-            print('Ingrese unicamente Anios')
 
-        if (num < 2012):
-            num = 'ayyyy lmao xdxdxd'
-            print('Ingrese numeros posteriores al 2015')
-    year.append(num)
+def GetAmount(date):
 
-agregarAnio()
-print(year)
+    return [x for x in datos if (x[0] == date)]

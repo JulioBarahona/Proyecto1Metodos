@@ -2,7 +2,7 @@ from PIL import Image, ImageDraw
 from modulosExtra import *
 
 def todosLosDomingos():
-    datosOriginales = getDatos()
+    datosOriginales = GetDatos()
     datosNuevos = []
 
     for i in range(len(datosOriginales)):
@@ -28,14 +28,79 @@ def todosLosDomingos():
     return datosNuevos
 
 
-def DatoParecido(amount):
-    datosOriginales = getDatos()
+def DatoParecido(info):
+    datosOriginales = GetDatos()
     res = []
 
+    try:
+        amount = int(info)
+    except:
+        amount = GetAmount(info)[0]
+        print(amount)
+        amount = float(amount[1])
+
+
     for i in datosOriginales:
-        if (i[1] > (amount - 1000) and i[1] < (amount + 1000)):
+        if (i[1] > (amount - 10000) and i[1] < (amount + 10000)):
             res.append(i[1])
             print(i)
 
     return res
+
+def GetFecha(day, month):
+    originalData = GetDatos()
+
+    year = originalData[0][5]
+    temp = 0
+    mean = []
+    for i in originalData:
+        if (i[3] >= day and i[3] <= day +7 and i[4] == month):
+            if (i[5] == year):
+                temp = (temp + i[1])/2
+            else:
+                print(temp)
+                temp =  0
+                year = i[5]
+
+    print(temp)
+
+def GetFinDeMes(day):
+    originalData = GetDatos()
+
+    print(day)
+    year = originalData[0][5]
+    temp = 0
+    for i in originalData:
+        if (i[3] == day):
+            #print(i)
+            if (i[5] == year):
+                if (i[1] > 0):
+                    temp = (temp + i[1])/2
+            else:
+                print(temp)
+                temp =  0
+                year = i[5]
+
+    print(temp)
+
+
+#Funcion para obtener datos que comparten dia y fecha
+def GetFechaName(info, day):
+    originalData = GetDatos()
+
+    year = originalData[0][5]
+    temp = 0
+    for i in originalData:
+        if (i[2] == info and i[1] > 0 and i[3] ==day):
+            print(i)
+            if (i[5] == year):
+                temp = (temp + i[1])/2
+            else:
+                print(temp)
+                temp =  0
+                year = i[5]
+
+    print(temp)
+
+
 
