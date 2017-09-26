@@ -1,5 +1,5 @@
 import csv
-#from texttable import Texttable
+from texttable import Texttables
 
 month = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
 
@@ -59,7 +59,7 @@ def agregarAnio():
     while num is 'ayyyy lmao xdxdxd':
 
         try:
-            num = int(input("Ingrese el año: "))
+            num = int(input("Ingrese el anio: "))
 
         except ValueError:
             print('Ingrese unicamente Anios')
