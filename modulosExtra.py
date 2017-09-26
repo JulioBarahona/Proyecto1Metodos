@@ -1,7 +1,9 @@
 import csv
-from texttable import Texttable
+#from texttable import Texttable
 
 month = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+
+year = [2012,2013,2014,2015]
 
 # imprime los nomrbes de los integrantes de manera ordenada
 def imprimirIntegrantes():
@@ -51,3 +53,20 @@ def getDatos():
             listaGruesa[i][1] = float(listaGruesa[i][1])
 
     return listaGruesa
+
+def agregarAnio():
+    num = 'ayyyy lmao xdxdxd'
+    while num is 'ayyyy lmao xdxdxd':
+        try:
+            num = int(input("Ingrese el año: "))
+
+        except ValueError:
+            print('Ingrese unicamente Anios')
+
+        if (num < 2012):
+            num = 'ayyyy lmao xdxdxd'
+            print('Ingrese numeros posteriores al 2015')
+    year.append(num)
+
+agregarAnio()
+print(year)
