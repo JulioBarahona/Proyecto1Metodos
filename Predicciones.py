@@ -73,7 +73,7 @@ def SingularDayPrediction(day, month, year):
     for i in yearMean:
         desv = desv + (res-i)**2
 
-    desv = 1.645*math.sqrt(desv)/math.sqrt(len(yearMean))
+    desv = 1.845*math.sqrt(desv)/math.sqrt(len(yearMean))
     ans = [res, desv]
     return ans
 
@@ -86,7 +86,7 @@ def Prediction(month, year):
 
     for i in range(monthDays[month]):
         res.append(SingularDayPrediction(i + 1, month, year))
-        print(res[i])
+        #print(res[i])
 
     return res
 

@@ -1,7 +1,12 @@
 from easygui import *
 import sys
+import pylab
+import numpy
 from funcionesAnalisis import *
+from Predicciones import *
+from FuncionesGUI import *
 
+ReadDatos()
 '''
 #Ventana Inicial presenta integrantes
 msgbox("                                   Proyecto #1\n"
@@ -33,5 +38,7 @@ while 1:
         fieldNames = ["Mes", "Año"]
         fieldValues = multenterbox(msg, title, fieldNames)
 
-        print(int(fieldValues[0])+2)
-        print((fieldValues[1])+2)
+        x = Prediction(int(fieldValues[0]), int(fieldValues[1]))
+        printValuesPrediction(x)
+
+
