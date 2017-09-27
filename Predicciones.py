@@ -1,6 +1,7 @@
 
 from modulosExtra import *
 import datetime
+import math
 import numpy
 
 
@@ -28,7 +29,7 @@ def SimilarDateName(day, month, year):
             if (i[2] == wd and i[5] <= year):
                 ans.append(i)
         else:
-            if (i[2] == wd  and i[3] == day and i[5] <= year):
+            if (i[2] == wd  and i[3] == day  and i[5] <= year):
                 ans.append(i)
 
     return ans
@@ -40,29 +41,43 @@ def SingularDayPrediction(day, month, year):
     tempData = SimilarDateName(day, month, year)
     #print(tempData)
     yearMean = []
+    count = []
     year = tempData[0][5]
     temp = tempData[0][1]
     cont = 0
+
 
     for i in tempData:
         if (i[5] == year):
             if (i[1] > 0):
                 temp = (temp + i[1])/2
+                cont += 1
         else:
+            count.append(cont)
             yearMean.append(temp)
-            cont =0
+            cont =1
             temp = i[1]
             year = i[5]
 
+    yearMean.append(temp)
+    count.append(cont)
 
-    total = (len(yearMean) + 1)*len(yearMean)/2
+    total = (len(yearMean) + 1) * len(yearMean) / 2
     temp = 1
     res = 0
+
     for i in range(len(yearMean)):
         res = res + yearMean[i]*temp/total
         temp += 1
 
-    return res
+    desv = 0
+    for i in yearMean:
+        desv = desv + (res-i)**2
+
+    desv = 1.645*math.sqrt(desv)/math.sqrt(len(yearMean))
+    ans = [res, desv]
+    return desv
+
 
 
 #Funcion para predecir el mes
@@ -70,9 +85,9 @@ def Prediction(month, year):
     datosOriginales = GetDatos()
     res = []
 
-    for i in range(31):
+    for i in range(monthDays[month]):
         res.append(SingularDayPrediction(i + 1, month, year))
-
+        print(res[i])
 
     return res
 

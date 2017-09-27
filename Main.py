@@ -26,13 +26,15 @@ y = numpy.sin(x)
 #GetFinDeMes(29)
 #GetFinDeMes(30)
 #GetFinDeMes(31)
-GetFechaName("Lunes",2)
+#GetFechaName("Lunes",2)
+#GetMonth(11,2014)
+#GetDay(24,12)
 #DatoParecido("7/15/2014")
+
+#SingularDayPrediction(30,3,2015)
 
 #print(FuncionesPrueba.SingularDayPrediction(15,3, 2015))
 
-'''x = FuncionesPrueba.Prediction(3,2015)
-for i in x:
-    print(i)'''
+x = Prediction(3,2015)
 #SimilarDate()
 #nigga

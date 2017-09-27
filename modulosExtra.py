@@ -4,6 +4,8 @@ from texttable import Texttable
 days = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31']
 months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
 daysName = ['Lunes', 'Martes','Miercoles','Jueves','Viernes','Sabado','Domingo']
+monthDays =[0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+diaFestivo = [0,[1],0,0,[13,14,15],[1],[30],0,[15],[15],[20],[1],[24,25]]
 years = []
 datos = []
 

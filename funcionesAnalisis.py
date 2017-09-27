@@ -102,5 +102,20 @@ def GetFechaName(info, day):
 
     print(temp)
 
+#Funcion para obtener los datos de un mes especifico
+def GetMonth(month, year):
+    originalData = GetDatos()
+
+    for i in originalData:
+        if (i[4] == month and i[5] ==  year):
+            print(i[1])
+
+def GetDay(day, month):
+    orinalData = GetDatos()
+
+    for i in orinalData:
+        if (i[3] == day and i[4] == month):
+            print(i)
+
 
 
