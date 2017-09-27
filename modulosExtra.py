@@ -63,3 +63,6 @@ def GetDatos():
 def GetAmount(date):
 
     return [x for x in datos if (x[0] == date)]
+
+def addYears(year):
+    years.append(year)
