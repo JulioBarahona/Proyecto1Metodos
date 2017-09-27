@@ -28,7 +28,7 @@ def SimilarDateName(day, month, year):
             if (i[2] == wd and i[5] <= year):
                 ans.append(i)
         else:
-            if (i[2] == wd  and i[3] == day  and i[5] <= year):
+            if (i[2] == wd  and i[3] >= day - 1 and i[3] <= day +1  and i[5] <= year):
                 ans.append(i)
 
     return ans
@@ -75,7 +75,7 @@ def SingularDayPrediction(day, month, year):
 
     desv = 1.645*math.sqrt(desv)/math.sqrt(len(yearMean))
     ans = [res, desv]
-    return desv
+    return ans
 
 
 

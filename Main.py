@@ -35,6 +35,6 @@ y = numpy.sin(x)
 
 #print(FuncionesPrueba.SingularDayPrediction(15,3, 2015))
 
-x = Prediction(3,2015)
+x = Prediction(1,2015)
 #SimilarDate()
 #nigga
