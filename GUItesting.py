@@ -14,18 +14,30 @@ msgbox("                                   Proyecto #1\n"
 #menu principal
 msg ="Seleccione la opcion que desea ejecutar \n Selecicones <cancel> para finalizar."
 title = "Menu principal"
-choices = ["Analizar dia", "Agregar Año", ]
+choices = ["Analizar dia", "Agregar Año", "Mes" ]
 
 #opciones a ingresar
 while 1:
+
+    #salida
     choice = choicebox(msg, title, choices)
     if choice is None:
         sys.exit(0)
+
+    #cuadro desplegado apara analizar dia
     elif choice == 'Analizar dia':
-        
+
+        msg = "Enter your personal information"
+        title = "Credit Card Application"
+        fieldNames = ["Nommbre", "Dia", "Mes"]
+        fieldValues = multenterbox(msg, title, fieldNames)
+        if fieldValues is None:
+            sys.exit(0)
+
+    #cuadro desplegado para agregar año
     elif choice == "Agregar Año":
         msg = "Ingrese el año que desea agregar"
         title = "Agregar un nuevo año de ingresos"
         fieldNames = ["Año"]
-        fieldValues = integerbox(msg, title,201, 2015,10000000)
+        fieldValues = integerbox(msg, title,201, 2016,10000000)
         addYears(fieldValues)
