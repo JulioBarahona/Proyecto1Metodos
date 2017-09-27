@@ -4,7 +4,6 @@ import datetime
 import math
 import numpy
 
-
 #Funcion para datos con el mismo numero de dia y que comparta mes.
 def SimilarDateNumber(day, month, year):
     originalData = GetDatos()

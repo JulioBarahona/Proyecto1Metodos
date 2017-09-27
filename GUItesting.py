@@ -1,7 +1,8 @@
 from easygui import *
 import sys
-from Main import *
+from funcionesAnalisis import *
 
+'''
 #Ventana Inicial presenta integrantes
 msgbox("                                   Proyecto #1\n"
        "Integrantes\n"
@@ -10,11 +11,11 @@ msgbox("                                   Proyecto #1\n"
        "       Jorgue Suchite       15293\n"
        "       Gerson Samayoa       15337\n"
        "       Kevin Sanchez?       ??????",'Metodos Numericos','Continuar')
-
+'''
 #menu principal
 msg ="Seleccione la opcion que desea ejecutar \n Selecicones <cancel> para finalizar."
 title = "Menu principal"
-choices = ["Analizar dia", "Agregar Año", "Mes" ]
+choices = ["Analizar dia"]
 
 #opciones a ingresar
 while 1:
@@ -27,27 +28,10 @@ while 1:
     #cuadro desplegado apara analizar dia
     elif choice == 'Analizar dia':
 
-        msg = "Enter your personal information"
-        title = "Credit Card Application"
-        fieldNames = ["Mes","Año"]
+        msg = "Ingrese el mes y el año que desea predecir"
+        title = "New Prediction "
+        fieldNames = ["Mes", "Año"]
         fieldValues = multenterbox(msg, title, fieldNames)
-        if fieldValues is None:
-            sys.exit(0)
-        while 1:
-            errmsg = ""
-            for i, name in enumerate(fieldNames):
-                if (fieldValues[i].strip() == "" and not((fieldValues[i].strip() in months)) and not ((fieldValues[i].strip() in years))):
-                    errmsg += "{} no valido.\n\n".format(name)
-            if errmsg == "":
-                break  # no problems found
-            fieldValues = multenterbox(errmsg, title, fieldNames, fieldValues)
-            if fieldValues is None:
-                break
 
-    #cuadro desplegado para agregar año
-    elif choice == "Agregar Año":
-        msg = "Ingrese el año que desea agregar"
-        title = "Agregar un nuevo año de ingresos"
-        fieldNames = ["Año"]
-        fieldValues = integerbox(msg, title,201, 2016,10000000)
-        addYears(fieldValues)
+        print(int(fieldValues[0])+2)
+        print((fieldValues[1])+2)
