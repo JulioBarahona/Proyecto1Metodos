@@ -29,14 +29,14 @@ while 1:
 
         msg = "Enter your personal information"
         title = "Credit Card Application"
-        fieldNames = ["Nombre", "Dia", "Mes"]
+        fieldNames = ["Mes","Año"]
         fieldValues = multenterbox(msg, title, fieldNames)
         if fieldValues is None:
             sys.exit(0)
         while 1:
             errmsg = ""
             for i, name in enumerate(fieldNames):
-                if (fieldValues[i].strip() == "" and not((fieldValues[i].strip() in months)) and not ((fieldValues[i].strip() in daysName))):
+                if (fieldValues[i].strip() == "" and not((fieldValues[i].strip() in months)) and not ((fieldValues[i].strip() in years))):
                     errmsg += "{} no valido.\n\n".format(name)
             if errmsg == "":
                 break  # no problems found
